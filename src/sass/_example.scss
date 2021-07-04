@@ -1,0 +1,71 @@
+body {
+    background-image: url(../images/map.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ul {
+    list-style-type: none;
+}
+
+.input_container {
+    margin: 0 auto;
+    padding: 50px 0 ;
+    display: flex;
+    justify-content: center;
+}
+
+.text_input {
+    width: 500px;
+    height: 50px;
+    font-size: 28px;
+    font-weight: 1.5;
+}
+
+.template_container {
+    margin: 0 auto;
+    // display: flex;
+    text-align: center;
+}
+
+.each_country_name {
+    font-size: 42px;
+    font-weight: 1.5;
+    
+}
+
+.each_country_name:not(:first-child) {
+    margin-top: 10px;
+}
+
+.each_country_name:hover,
+.each_country_name:focus {
+    color: green;
+}
+
+.country_name {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 1.5;
+}
+
+.country_container {
+    display: flex;
+    justify-content: center;
+}
+
+.country_properties {
+    margin: 0;
+    text-align: left;
+    font-size: 42px;
+}
+
+.flag_container {
+    padding-left: 40px;
+}
+
+.flag {
+    display: block;
+    width: 450px;
+    height: 300px;
+    
+}
