@@ -35,13 +35,14 @@ function onSearch (event) {
     const searchQuery = refs.input.value.trim();
     refs.tplContainer.innerHTML = '';
     
+    if(!searchQuery) {
+        return;
+    }
+
     fetchCountries(searchQuery)
         .then(country => {
-            
-            if (country.status === 404) {
-                error(error(pnotify.notFound));
-                refs.tplContainer.innerHTML = '';
-            }
+            console.log(country);
+
             if(country.length > 10) {
                 error(pnotify.foundMany);
                 refs.tplContainer.innerHTML = '';
@@ -53,8 +54,14 @@ function onSearch (event) {
             
             if(country.length === 1) {
                 renderCountryCard(country);
-            } 
-        });
+            }             
+            
+            if (country.status === 404) {
+                error(pnotify.notFound);
+                refs.tplContainer.innerHTML = '';
+            }
+        })
+        .catch(console.log);
 }
 
 function renderCountryCard(country) {
